@@ -32,3 +32,9 @@ class Calculator:
         """ Exponentiate Value_A by Value_B"""
         self.result = value_a ** value_b
         return self.result
+
+    def multiply_numbers(self, value_a, value_b):
+        """ multiply two numbers and get result"""
+        self.result = value_a * value_b
+        return self.result
+
