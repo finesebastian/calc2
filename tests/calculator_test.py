@@ -28,7 +28,19 @@ def test_calculator_subtract():
     assert calc.get_result() == -1
 
 def test_calculator_multiplication():
-    """ testing multiplication"""
+    """ Testing the Multiplication method of the calculator"""
     calc = Calculator()
-    calc.multiply_numbers(1,2)
+    calc.multiple_number(2,3)
+    assert calc.get_result() == 6
+
+def test_calculator_division():
+    """ Testing the division method of the calculator"""
+    calc = Calculator()
+    calc.divide_number(4, 2)
     assert calc.get_result() == 2
+
+def test_calculator_exponential():
+    """ Testing the exponential method of the calculator"""
+    calc = Calculator()
+    calc.exp_number(2,3)
+    assert calc.get_result() == 8
