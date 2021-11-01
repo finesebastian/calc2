@@ -1,46 +1,27 @@
 """Testing the Calculator"""
-from calculator.main import Calculator
+from calculator.calculator import Calculator
 
-def test_calculator_result():
-    """testing calculator result is 0"""
-    calc = Calculator()
-    assert calc.result == 0
 
 def test_calculator_add():
     """Testing the Add function of the calculator"""
-    #Arrange by instantiating the calc class
-    calc = Calculator()
-    #Act by calling the method to be tested
-    calc.add_number(4)
-    #Assert that the results are correct
-    assert calc.result == 4
-
-def test_calculator_get_result():
-    """Testing the Get result method of the calculator"""
-    calc = Calculator()
-    calc.add_number(1)
-    assert calc.get_result() == 1
+    assert Calculator.add_number(1,2) == 3
 
 def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
-    calc = Calculator()
-    calc.subtract_number(1)
-    assert calc.get_result() == -1
+    assert Calculator.subtract_number(3,4) == -1
 
 def test_calculator_multiplication():
     """ Testing the Multiplication method of the calculator"""
-    calc = Calculator()
-    calc.multiple_number(2,3)
-    assert calc.get_result() == 6
+    assert Calculator.multiple_number(2,3) == 6
 
 def test_calculator_division():
     """ Testing the division method of the calculator"""
-    calc = Calculator()
-    calc.divide_number(4, 2)
-    assert calc.get_result() == 2
+    assert Calculator.divide_number(8,4) == 2
+
+def test_calculator_division_by_zero():
+    """ Testing the division by zero try/except catch of the calculator"""
+    assert isinstance(Calculator.divide_number(1,0), ArithmeticError)
 
 def test_calculator_exponential():
     """ Testing the exponential method of the calculator"""
-    calc = Calculator()
-    calc.exp_number(2,3)
-    assert calc.get_result() == 8
+    assert Calculator.exp_number(2,3) == 8
