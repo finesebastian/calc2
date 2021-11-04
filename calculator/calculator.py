@@ -1,37 +1,11 @@
 """ This imports the calculation class"""
-from calc.addition import Addition
-from calc.subtraction import Subtraction
-from calc.multiplication import Multiplication
+from calc.calculations.addition import Addition
+from calc.calculations.subtraction import Subtraction
+from calc.calculations.division import Division
+from calc.calculations.multiplication import Multiplication
 
 class Calculator:
     """ This is the Calculator class"""
-    history = []
-
-    @staticmethod
-    def count_history():
-        """ Returns the length of the history list"""
-        return len(Calculator.history)
-
-    @staticmethod
-    def add_calculation_to_history(calculation):
-        """ Adds calculation to history list"""
-        Calculator.history.append(calculation)
-
-    @staticmethod
-    def get_last_calculation():
-        """ Returns the last calculation object"""
-        return Calculator.history[-1]
-
-    @staticmethod
-    def get_last_calculation_result():
-        """ Returns last calculated value added to history list"""
-        return Calculator.history[-1].get_result()
-
-    @staticmethod
-    def clear_history():
-        """Clears History List"""
-        Calculator.history.clear()
-        return Calculator.count_history()
 
     @staticmethod
     def add_number(value_a, value_b):
@@ -56,7 +30,8 @@ class Calculator:
     @staticmethod
     def divide_number(value_a, value_b):
         """ divide number from result"""
+        Calculator.add_calculation_to_history(Division.create(value_a, value_b))
         try:
-            return value_a / value_b
+            return Calculator.get_last_calculation_result()
         except ArithmeticError:
             return ArithmeticError('Division by Zero')
