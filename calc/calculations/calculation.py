@@ -1,13 +1,15 @@
 """Calculation Class"""
 class Calculation:
     # pylint: disable=too-few-public-methods
-    """Returns no values, but accepts value a and value b within calculation object"""
-    def __init__(self,value_a,value_b):
-        """Initiates values a and b in calculation object"""
-        self.value_a = value_a
-        self.value_b = value_b
+    """Returns no values, but accepts tuple to generate values float list"""
+    def __init__(self, values: tuple):
+        """Initiates values as a list of floats"""
+        self.values = Calculation.convert_args_to_list_float(values)
 
     @classmethod
-    def create (cls, value_a, value_b):
-        """Create methods turns values of value_a and value_b"""
-        return cls(value_a, value_b)
+    def convert_args_to_list_float (values):
+        """Generates a list of floats for tuple input"""
+        list_values_float =[]
+        for item in values:
+            list_values_float.append(float(item))
+        return list_values_float

@@ -1,11 +1,11 @@
 """This class tests calculations functionality"""
 import pytest
 
-from calculator.calculations import Calculations
+from history.calculations import Calculations
+from calculator.calculator import Calculator
 
 @pytest.fixture
 def clear_history_fixture():
     """"Creates fixture for clearing history after each test"""
-    Calculator.clear_history()
+    Calculations.clear_history()
 
-def test_get_calculation(clear_history_fixture):
