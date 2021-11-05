@@ -1,5 +1,14 @@
 """Testing the Calculator"""
 from calculator.calculator import Calculator
+from history.calculations import Calculations
+
+import pytest
+
+@pytest.fixture
+def clear_history():
+    """Clears History List"""
+    Calculations.history.clear()
+    return True
 
 def test_calculator_add():
     """Testing the Add function of the calculator"""
