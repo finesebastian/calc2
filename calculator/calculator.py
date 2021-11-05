@@ -1,7 +1,9 @@
 """ This imports the calculation class"""
 from calc.addition import Addition
 from calc.subtraction import Subtraction
+from calc.division import Division
 from calc.multiplication import Multiplication
+
 
 class Calculator:
     """ This is the Calculator class"""
@@ -26,6 +28,11 @@ class Calculator:
     def get_last_calculation_result():
         """ Returns last calculated value added to history list"""
         return Calculator.history[-1].get_result()
+
+    @staticmethod
+    def get_first_calculation_result():
+        """ Returns the first stored result in history"""
+        return Calculator.history[0].get_result()
 
     @staticmethod
     def clear_history():
@@ -56,7 +63,5 @@ class Calculator:
     @staticmethod
     def divide_number(value_a, value_b):
         """ divide number from result"""
-        try:
-            return value_a / value_b
-        except ArithmeticError:
-            return ArithmeticError('Division by Zero')
+        Calculator.add_calculation_to_history(Division.create(value_a, value_b))
+        return Calculator.get_last_calculation_result()
