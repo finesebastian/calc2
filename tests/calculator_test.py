@@ -1,18 +1,9 @@
 """Testing the Calculator"""
 from calculator.calculator import Calculator
-from history.calculations import Calculations
-
-import pytest
-
-@pytest.fixture
-def clear_history():
-    """Clears History List"""
-    Calculations.history.clear()
-    return True
 
 def test_calculator_add():
-    """Testing the Add function of the calculator"""
-    assert Calculator.add_number(1,2) == 3
+    """Testing the subtract method of the calculator"""
+    assert Calculator.add_number(3,4) == 7
 
 def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
@@ -29,8 +20,3 @@ def test_calculator_division():
 def test_calculator_division_by_zero():
     """ Testing the division by zero try/except catch of the calculator"""
     assert isinstance(Calculator.divide_number(1,0), ArithmeticError)
-
-def test_calculator_complete():
-    """Testing each section of the calculator"""
-    assert Calculator.add_number(1,2) == 3
-    assert Calculator.subtract_number(2,1) == 1

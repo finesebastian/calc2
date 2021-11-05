@@ -7,9 +7,14 @@ class Calculation:
         self.values = Calculation.convert_args_to_list_float(values)
 
     @classmethod
+    def create(cls, values: tuple):
+        """Factory method"""
+        return cls(values)
+
+    @staticmethod
     def convert_args_to_list_float (values):
         """Generates a list of floats for tuple input"""
         list_values_float =[]
         for item in values:
             list_values_float.append(float(item))
-        return list_values_float
+        return tuple(list_values_float)

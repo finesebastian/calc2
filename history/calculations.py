@@ -1,6 +1,7 @@
 """Calculation History Class"""
 
 class Calculations:
+    """This is the calculations class"""
     history=[]
     #pylint: disable=too-few-public-methods
 
@@ -13,12 +14,23 @@ class Calculations:
     @staticmethod
     def get_last_calculation_result():
         """ Returns last calculated value added to history list"""
-        return Calculations.history[-1].get_result()
+        last_calculation_object = Calculations.get_last_calculation()
+        return last_calculation_object.get_result()
 
     @staticmethod
     def add_calculation_to_history(calculation):
         """ Adds calculation to history list"""
-        Calculations.history.append(calculation)
+        Calculations.add_history(calculation)
+
+    @staticmethod
+    def get_calculation(num):
+        """ Returns calculation object at num"""
+        return Calculations.history[num]
+
+    @staticmethod
+    def get_calculation_result(num):
+        """ Returns calculation object result at num"""
+        return Calculations.get_calculation(num).get_result()
 
     @staticmethod
     def get_last_calculation():
@@ -26,7 +38,22 @@ class Calculations:
         return Calculations.history[-1]
 
     @staticmethod
+    def get_first_calculation():
+        """ Returns the first calculation object"""
+        return Calculations.history[0]
+
+    @staticmethod
+    def get_first_calculation_result():
+        """ Returns first calculated value added to history list"""
+        first_calculation_object = Calculations.get_first_calculation()
+        return first_calculation_object.get_result()
+
+    @staticmethod
     def count_history():
         """ Returns the length of the history list"""
         return len(Calculations.history)
 
+    @staticmethod
+    def add_history(calculation):
+        """ Adds calculation to history"""
+        return Calculations.history.append(calculation)
