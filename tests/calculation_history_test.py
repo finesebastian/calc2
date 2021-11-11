@@ -13,15 +13,15 @@ def clear_history_fixture():
 @pytest.fixture
 def add_calculation_fixture():
     """"Creates fixture for adding value to history for each test"""
-    values = (1,2)
-    Calculations.add_calculation_to_history(Addition(values))
+    nums = (1,2)
+    Calculations.add_calculation_to_history(Addition(nums))
 
 def test_get_calc_index(clear_history_fixture, add_calculation_fixture):
     """Tests functionality of index calling history object"""
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculations.count_history() == 1
-    values = (2, 2)
-    Calculations.add_calculation_to_history(Addition(values))
+    nums = (2, 2)
+    Calculations.add_calculation_to_history(Addition(nums))
     assert Calculations.count_history() == 2
     assert Calculations.get_calculation(1) == Calculations.history[1]
 
@@ -29,8 +29,8 @@ def test_get_calc_index_result(clear_history_fixture, add_calculation_fixture):
     """Tests functionality of index result calling history object"""
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculations.count_history() == 1
-    values = (2, 2)
-    Calculations.add_calculation_to_history(Addition(values))
+    nums = (2, 2)
+    Calculations.add_calculation_to_history(Addition(nums))
     assert Calculations.count_history() == 2
     assert Calculations.get_calculation_result(1) == 4
 

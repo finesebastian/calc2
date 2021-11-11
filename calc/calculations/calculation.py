@@ -1,10 +1,10 @@
 """Calculation Class"""
 class Calculation:
     # pylint: disable=too-few-public-methods
-    """Returns no values, but accepts tuple to generate values float list"""
+    """Returns no values, but accepts tuple to generate values float tuple"""
     def __init__(self, values: tuple):
         """Initiates values as a list of floats"""
-        self.values = Calculation.convert_args_to_list_float(values)
+        self.values = Calculation.convert_args_to_tuple_of_floats(values)
 
     @classmethod
     def create(cls, values: tuple):
@@ -12,7 +12,7 @@ class Calculation:
         return cls(values)
 
     @staticmethod
-    def convert_args_to_list_float (values):
+    def convert_args_to_tuple_of_floats (values):
         """Generates a list of floats for tuple input"""
         list_values_float =[]
         for item in values:

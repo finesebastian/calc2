@@ -8,27 +8,27 @@ class Calculator:
     """ This is the Calculator class"""
 
     @staticmethod
-    def add_number(*args):
+    def add_number(tuple_of_numbers: tuple):
         """ Instantiating Addition object and passing value a and b to the constructor"""
         # Factory create method to return an instance of the class
-        calculation = Addition.create(args)
+        calculation = Addition.create(tuple_of_numbers)
         # -1 returns the last item added to a list
         return calculation.get_result()
 
     @staticmethod
-    def subtract_number(*args):
+    def subtract_number(tuple_of_numbers: tuple):
         """ subtract number from result"""
-        calculation = Subtraction.create(args)
+        calculation = Subtraction.create(tuple_of_numbers)
         return calculation.get_result()
 
     @staticmethod
-    def multiple_number(*args):
+    def multiple_number(tuple_of_numbers: tuple):
         """ multiply number from result"""
-        calculation = Multiplication.create(args)
+        calculation = Multiplication.create(tuple_of_numbers)
         return calculation.get_result()
 
     @staticmethod
-    def divide_number(*args):
+    def divide_number(tuple_of_numbers: tuple):
         """ divide number from result"""
-        calculation = Division.create(args)
+        calculation = Division.create(tuple_of_numbers)
         return  calculation.get_result()
