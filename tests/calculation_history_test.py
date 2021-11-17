@@ -14,7 +14,8 @@ def clear_history_fixture():
 def add_calculation_fixture():
     """"Creates fixture for adding value to history for each test"""
     nums = (1,2)
-    Calculations.add_calculation_to_history(Addition(nums))
+    add = Addition(nums)
+    Calculations.add_calculation_to_history(add)
 
 def test_get_calc_index(clear_history_fixture, add_calculation_fixture):
     """Tests functionality of index calling history object"""

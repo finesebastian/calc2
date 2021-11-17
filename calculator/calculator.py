@@ -1,34 +1,30 @@
 """ This imports the calculation class"""
-from calc.calculations.addition import Addition
-from calc.calculations.subtraction import Subtraction
-from calc.calculations.division import Division
-from calc.calculations.multiplication import Multiplication
+from history.calculations import Calculations
 
 class Calculator:
     """ This is the Calculator class"""
 
     @staticmethod
+    def get_calculator_result():
+        """Returns last calculation object result"""
+        return Calculations.get_last_calculation_result()
+
+    @staticmethod
     def add_number(tuple_of_numbers: tuple):
         """ Instantiating Addition object and passing value a and b to the constructor"""
-        # Factory create method to return an instance of the class
-        calculation = Addition.create(tuple_of_numbers)
-        # -1 returns the last item added to a list
-        return calculation.get_result()
+        Calculations.add_addition_calculation_to_history(tuple_of_numbers)
 
     @staticmethod
     def subtract_number(tuple_of_numbers: tuple):
         """ subtract number from result"""
-        calculation = Subtraction.create(tuple_of_numbers)
-        return calculation.get_result()
+        Calculations.add_subtraction_calculation_to_history(tuple_of_numbers)
 
     @staticmethod
     def multiple_number(tuple_of_numbers: tuple):
         """ multiply number from result"""
-        calculation = Multiplication.create(tuple_of_numbers)
-        return calculation.get_result()
+        Calculations.add_multiplication_calculation_to_history(tuple_of_numbers)
 
     @staticmethod
     def divide_number(tuple_of_numbers: tuple):
         """ divide number from result"""
-        calculation = Division.create(tuple_of_numbers)
-        return  calculation.get_result()
+        Calculations.add_division_calculation_to_history(tuple_of_numbers)
