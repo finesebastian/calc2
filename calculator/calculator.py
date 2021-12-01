@@ -11,7 +11,7 @@ class Calculator:
 
     @staticmethod
     def add_number(tuple_of_numbers: tuple):
-        """ Instantiating Addition object and passing value a and b to the constructor"""
+        """ Instantiating Addition object and passing tuple through Calculations"""
         Calculations.add_addition_calculation_to_history(tuple_of_numbers)
 
     @staticmethod

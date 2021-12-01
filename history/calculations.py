@@ -16,6 +16,11 @@ class Calculations:
         return True
 
     @staticmethod
+    def add_history(calculation):
+        """ Adds calculation to history"""
+        return Calculations.history.append(calculation)
+
+    @staticmethod
     def get_last_calculation_result():
         """ Returns last calculated value added to history list"""
         return Calculations.get_last_calculation().get_result()
@@ -76,7 +81,4 @@ class Calculations:
         """ Returns the length of the history list"""
         return len(Calculations.history)
 
-    @staticmethod
-    def add_history(calculation):
-        """ Adds calculation to history"""
-        return Calculations.history.append(calculation)
+

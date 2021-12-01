@@ -9,8 +9,11 @@ def test_calculator_add():
 
 def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
+    #Arrange a sample set of numbers within a tuple to be evaluated by the calculator.
     num_tuple = (3, 4)
+    #Act by calling the subtraction function of the calculator
     Calculator.subtract_number(num_tuple)
+    #Assert the operation (subtraction) results in the correct result: -1
     assert Calculator.get_calculator_result() == -1
 
 def test_calculator_multiplication():
