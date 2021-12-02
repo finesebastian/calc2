@@ -15,22 +15,26 @@
   </head>
     <body style="width: 95vw" class="backgroundImage scrollBarDelete">
         <div class="headerContainer">
+            <div class="headerContainer pagetitle banner">
+                <span style="color: white">{% block page_title %}{% endblock %}</span>
+            </div>
             <div class="navbar">
               <div class="dropdown">
                   <button class="dropbtn" style="background-color: inherit">
                       Quick Access &#9660;
                   </button>
                   <div class="dropdown-content">
-                      <a href="{{ url_for('templates', filename='browsers.html')}}">The Browsers</a>
-                      <a href="{{ url_for('templates', filename='salesmen.html')}}">The Entrepreneurs</a>
-                      <a href="{{ url_for('templates', filename='enablers.html')}}">The Enablers</a>
-                      <a href="{{ url_for('templates', filename='builders.html')}}">The Founders</a>
-                      <a href="{{ url_for('templates', filename='isp.html')}}">The Providers</a>
-                      <a href="{{ url_for('templates', filename='calculator.html')}}">OOP Principles</a>
-                      <a href="{{ url_for('templates', filename='pylint.html')}}">Pylint</a>
-                      <a href="{{ url_for('templates', filename='search.html')}}">The Searchers</a>
-                      <a href="{{ url_for('templates', filename='concerns.html')}}">Separation of Concerns</a>
-                      <a href="{{ url_for('templates', filename='tutorialtest.html')}}">Triple-A Testing</a>
+                      <a href="{{ url_for('templates', filename='basicform.html')}}">Basic Form</a>
+<!--                      <a href="{{ url_for('templates', filename='browsers.html')}}">The Browsers</a>-->
+<!--                      <a href="{{ url_for('templates', filename='salesmen.html')}}">The Entrepreneurs</a>-->
+<!--                      <a href="{{ url_for('templates', filename='enablers.html')}}">The Enablers</a>-->
+<!--                      <a href="{{ url_for('templates', filename='builders.html')}}">The Founders</a>-->
+<!--                      <a href="{{ url_for('templates', filename='isp.html')}}">The Providers</a>-->
+<!--                      <a href="{{ url_for('templates', filename='calculator.html')}}">OOP Principles</a>-->
+<!--                      <a href="{{ url_for('templates', filename='pylint.html')}}">Pylint</a>-->
+<!--                      <a href="{{ url_for('templates', filename='search.html')}}">The Searchers</a>-->
+<!--                      <a href="{{ url_for('templates', filename='concerns.html')}}">Separation of Concerns</a>-->
+<!--                      <a href="{{ url_for('templates', filename='tutorialtest.html')}}">Triple-A Testing</a>-->
                   </div>
               </div>
           </div>
